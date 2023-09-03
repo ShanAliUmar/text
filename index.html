@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shan ali umar</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: brown;
+            flex-direction: column;
+            gap: 30px;
+        }
+        #dome{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .h1{
+            position: relative;
+        }
+        .h1::after{
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 3px;
+            background-color: blue;
+            left: 0;
+            bottom: 0;
+            animation: move 3s infinite linear;
+        }
+        @keyframes move{
+            0%{
+                transform: translateX(-2px) ;
+            }
+            50%{
+                transform: translateX(45px);
+            }
+            100%{
+                transform: translateX(-2px);
+            }
+        }
+    </style>
+</head>
+
+<body> 
+    <h1 class="h1">Time</h1>
+    <p id="dome"></p>
+    <script>
+(function () {
+   setInterval(() => {
+    var d = new Date().toLocaleTimeString();
+    document.getElementById("dome").innerHTML = d;
+}, 1000)
+})();
+    </script>
+</body>
+
+</html>
